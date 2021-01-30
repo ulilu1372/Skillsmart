@@ -10,4 +10,5 @@ def odometer(oksana):
             c += a * b
         if i == 1:
             b = oksana[i]
-            c += a * b
+            c += a * b         
+    return c
