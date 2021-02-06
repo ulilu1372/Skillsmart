@@ -8,6 +8,8 @@ def ConquestCampaign(N, M, L, battalion):
     for i in range(1, N + 1):
         for j in range(1, M + 1):
             list.append([i,j])
+    if list == battalion_new:
+        return 1
     while list != []:
         for i in range(len(battalion_new)):
             battalion_new.append([battalion_new[i][0] + 1, battalion_new[i][1]])
