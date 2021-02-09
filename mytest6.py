@@ -1,5 +1,4 @@
 def PatternUnlock(N, hits):
-    hits = []
     sum = 0
     for i in range(1, len(hits)):
         if hits[i] == 6 and hits[i - 1] == 2 or hits[i] == 2 and hits[i - 1] == 6:
