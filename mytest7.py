@@ -25,7 +25,7 @@ def WordSearch(n, str, subs):
             
             return spisok
             
-    elif:                        
+    elif ' ' in str:                        
         for i in range(len(str)):
             if str[i] == ' ':
                 s.append(i)
