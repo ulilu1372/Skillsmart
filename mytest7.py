@@ -1,5 +1,6 @@
 def WordSearch(n, str, subs):
     sum = 0
+    sum1 = 0
     s = []
     a = []
     n1 = n 
@@ -9,7 +10,13 @@ def WordSearch(n, str, subs):
                 if i == n:
                     str = str[:i] + '\n' + str[i:]
                     a.append(i)
-                    n = n + n1     
+                    n = n + n1
+                if i != n:
+                    sum1 += 1
+                  
+                if sum1 == len(str):
+                    return [0]
+              
             for i in range(len(a)):
                 if subs in str[sum:a[i]]:
                     spisok.append(1)
