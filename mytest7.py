@@ -1,50 +1,62 @@
-def WordSearch(widht_str, s, subs):
-    court = 0  
-    court1 = 0  
-    court_all = 0  
-    court_speace = 0  
-    add_str = ''
-    sum_arr = []
-    line_length = 0
-    j = 0
-    len_frases = len(s)
-    for i in range(len_frases):
-        while j < len(s) - 1:
-            if s[court] == ' ':  
-                court += 1
-                court_speace = 1  
-                
-            for j in range(0 + court,
-                           widht_str + court):  
-                court_all += 1
-                court1 += 1
-                add_str += s[j]  
-                if j == len(s) - 1:  
-                    sum_arr.append(add_str)
+def WordSearch(ilen, s, subs):
+    line = list(s)
+    work_line = []
+    work_massive = []
+    while len(line) > ilen:
+        xchange = 0
+        for i in range(ilen, 0, -1):
+            if line[i] == ' ':
+                xchange = 1
+                for j in range(0, i + 1):
+                    work_line.append(line[0])
+                    line.pop(0)
+                work_line = ''.join(work_line)
+                work_massive.append(work_line)
+                work_line = []
+                break
+        if xchange == 0:
+            for j in range(0, ilen):
+                work_line.append(line[0])
+                line.pop(0)
+            work_line = ''.join(work_line)
+            work_massive.append(work_line)
+            work_line = []
+    line = ''.join(line)
+    work_massive.append(line)
+    line_outcome = []
+    for x in range(len(work_massive)):
+        if len(work_massive[x]) == len(subs):
+            count = True
+            for y in range(len(subs)):
+                if subs[y] != work_massive[x][y]:
+                    count = False
+                    line_outcome.append(0)
                     break
-                if widht_str == court1:
-                    if add_str.find(' ') == -1 and s[(line_length + court1)] != ' ':
-                        sum_arr.append(add_str)
-                    if add_str.find(' ') != -1 and s[
-                        (line_length + court1)] != ' ':
-                        for k in range(len(add_str) - 1, -1, -1):  
-                            if add_str[k] == ' ':  
-                                add_str = add_str[0:k]  
-                                sum_arr.append(add_str)
-                                break
-                    if s[(line_length + court1)] == ' ':
-                        sum_arr.append(add_str)
-                    line_length += len(
-                        add_str) + court_speace  
-                    court += len(add_str)
-                    add_str = ''
-                    court1 = 0
-                    court_speace = 0
-    end_arr = []
-    for h in sum_arr:
-        if subs in h.split():
-            end_arr.append(1)
+            if count is True:
+                line_outcome.append(1)
         else:
-            end_arr.append(0)
-
-    return end_arr
+            count = False
+            for y in range(len(work_massive[x])-len(subs)+1):
+                count = True
+                for z in range(len(subs)):
+                    if subs[z] != work_massive[x][z + y]:
+                        count = False
+                        break
+                if count is False:
+                    continue
+                index_begin = y
+                index_end = z + y
+                if index_begin != 0:
+                    if work_massive[x][index_begin - 1] != ' ':
+                        count = False
+                        continue
+                if index_end < (len(work_massive[x])-1):
+                    if work_massive[x][index_end + 1] != ' ':
+                        count = False
+                        continue
+                break
+            if count == True:
+                line_outcome.append(1)
+            else:
+                line_outcome.append(0)
+    return line_outcome
