@@ -7,7 +7,7 @@ def MassVote(N, Votes):
           count += 1
   if winner > 0.5 and count == 1:
       return "majority winner " + str(Votes.index(maximum_value) + 1)
-  elif winner < 0.5 and count == 1:
+  elif winner < 0.5 or winner == 0.5 and count == 1:
       return "minority winner " + str(Votes.index(maximum_value) + 1)
   else:
       return "no winner"
