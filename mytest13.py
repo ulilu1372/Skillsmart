@@ -1,5 +1,4 @@
 def UFO(N, data, octal):
-    data = [1234,1777]
     spisok = []
     if octal == True:
         for i in range(len(data)):
