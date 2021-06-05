@@ -49,3 +49,28 @@ def TheRabbitsFoot(s, encode):
                     break
                 scr_line += arr_decrip[j][i]
         return scr_line
+    
+    
+    
+    
+    #мое
+    #def StringRabbitsFoot(s, encode):
+s = 'отдай мою кроличью лапку'
+new_s = s.replace(' ', '')
+l = len(new_s)
+matrix = []
+new_matrix = []
+sqrt = l ** 0.5
+rows = int(sqrt)
+columns = round(sqrt)
+while l > rows * columns:
+    rows += 1
+for x in range(0, len(new_s), columns):
+    matrix.append(new_s[x:x+columns])
+try:
+    for i in range(columns):
+        for j in range(rows):
+            new_matrix.append(matrix[j][i])
+except:
+    IndexError
+new_matrix = ''.join(new_matrix)
