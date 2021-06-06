@@ -83,3 +83,11 @@ for i in range(columns):
 
 new_matrix = ''.join(new_matrix)
 print(new_matrix)
+
+
+new_matrix = new_matrix.split()
+spisok = []
+for i in range(len(new_matrix) - 1):
+    for j in range(len(new_matrix[len(new_matrix) - 1])):
+        spisok.append(new_matrix[j][i])
+print(spisok)
