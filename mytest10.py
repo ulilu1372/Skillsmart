@@ -1,71 +1,70 @@
 def PrintingCosts(Line):
-    line = list(Line)
-    summ = 0
-    for i in range(len(line)):
-        if line[i] == ' ':
-            summ += 0
-        elif line[i] == '\'' or line[i] == '`':
-            summ += 3
-        elif line[i] == '.':
-            summ += 4
-        elif line[i] == '\"':
-            summ += 6
-        elif line[i] == ',' or line[i] == '-' or line[i] == '^':
-            summ += 7
-        elif line[i] == ':' or line[i] == '_':
-            summ += 8
-        elif line[i] == '!' or line[i] == '~':
-            summ += 9
-        elif line[i] == '>' or line[i] == '\\' or line[i] == '/' or line[i] == '<':
-            summ += 10
-        elif line[i] == ';':
-            summ += 11
-        elif line[i] == '(' or line[i] == '|' or line[i] == ')':
-            summ += 12
-        elif line[i] == 'v' or line[i] == 'r' or line[i] == 'x' or line[i] == '+':
-            summ += 13
-        elif line[i] == 'Y' or line[i] == '=':
-            summ += 14
-        elif line[i] == '?' or line[i] == 'i':
-            summ += 15
-        elif line[i] == 'L' or line[i] == 'T' or line[i] == 'l' or line[i] == '7':
-            summ += 16
-        elif line[i] == 't' or line[i] == 'c' or line[i] == 'u' or line[i] == '*':
-            summ += 17
-        elif line[i] == 'J' or line[i] == 'n' or line[i] == ']' or line[i] == '{' or line[i] == 'X' or line[i] == '}' or line[i] == 'f' or line[i] == 'I' or line[i] == '[':
-            summ += 18
-        elif line[i] == 'V' or line[i] == 'z' or line[i] == 'w' or line[i] == '1':
-            summ += 19
-        elif line[i] == 'o' or line[i] == 'F' or line[i] == 'j' or line[i] == 'C':
-            summ += 20
-        elif line[i] == 'h' or line[i] == 'K' or line[i] == '4' or line[i] == 'k' or line[i] == 's':
-            summ += 21
-        elif line[i] == '2' or line[i] == 'Z' or line[i] == '%' or line[i] == 'm' or line[i] == '0':
-            summ += 22
-        elif line[i] == '8' or line[i] == 'P' or line[i] == '3' or line[i] == 'e' or line[i] == 'U' or line[i] == 'a':
-            summ += 23
-        elif line[i] == '&' or line[i] == '#' or line[i] == 'A' or line[i] == 'y':
-            summ += 24
-        elif line[i] == 'b' or line[i] == 'd' or line[i] == 'p' or line[i] == 'G' or line[i] == 'S' or line[i] == 'q' or line[i] == 'H' or line[i] == 'N':
-            summ += 25
-        elif line[i] == 'D' or line[i] == '9' or line[i] == 'E' or line[i] == 'W' or line[i] == '6' or line[i] == 'O':
-            summ += 26
-        elif line[i] == '5':
-            summ += 27
-        elif line[i] == 'R' or line[i] == 'M':
-            summ += 28
-        elif line[i] == '$' or line[i] == 'B':
-            summ += 29
-        elif line[i] == 'g':
-            summ += 30
-        elif line[i] == 'Q':
-            summ += 31
-        elif line[i] == '@':
-            summ += 32
+    sum = 0
+    Line = Line.replace(' ', '')
+    Line = [x for x in Line]
+    for i in range(len(Line)):
+        if Line[i] == ' ':
+            sum += 0
+        elif Line[i] == '\'' or Line[i] == '`':
+            sum += 3
+        elif Line[i] == '.':
+            sum += 4
+        elif Line[i] == '\"':
+            sum += 6
+        elif Line[i] == ',' or Line[i] == '-' or Line[i] == '^':
+            sum += 7
+        elif Line[i] == ':' or Line[i] == '_':
+            sum += 8
+        elif Line[i] == '!' or Line[i] == '~':
+            sum += 9
+        elif Line[i] == '>' or Line[i] == '\\' or Line[i] == '/' or Line[i] == '<':
+            sum += 10
+        elif Line[i] == ';':
+            sum += 11
+        elif Line[i] == '(' or Line[i] == '|' or Line[i] == ')':
+            sum += 12
+        elif Line[i] == 'v' or Line[i] == 'r' or Line[i] == 'x' or Line[i] == '+':
+            sum += 13
+        elif Line[i] == 'Y' or Line[i] == '=':
+            sum += 14
+        elif Line[i] == '?' or Line[i] == 'i':
+            sum += 15
+        elif Line[i] == 'L' or Line[i] == 'T' or Line[i] == 'l' or Line[i] == '7':
+            sum += 16
+        elif Line[i] == 't' or Line[i] == 'c' or Line[i] == 'u' or Line[i] == '*':
+            sum += 17
+        elif Line[i] == 'J' or Line[i] == 'n' or Line[i] == ']' or Line[i] == '{' or Line[i] == 'X' or Line[i] == '}' or Line[i] == 'f' or Line[i] == 'I' or Line[i] == '[':
+            sum += 18
+        elif Line[i] == 'V' or Line[i] == 'z' or Line[i] == 'w' or Line[i] == '1':
+            sum += 19
+        elif Line[i] == 'o' or Line[i] == 'F' or Line[i] == 'j' or Line[i] == 'C':
+            sum += 20
+        elif Line[i] == 'h' or Line[i] == 'K' or Line[i] == '4' or Line[i] == 'k' or Line[i] == 's':
+            sum += 21
+        elif Line[i] == '2' or Line[i] == 'Z' or Line[i] == '%' or Line[i] == 'm' or Line[i] == '0':
+            sum += 22
+        elif Line[i] == '8' or Line[i] == 'P' or Line[i] == '3' or Line[i] == 'e' or Line[i] == 'U' or Line[i] == 'a':
+            sum += 23
+        elif Line[i] == '&' or Line[i] == '#' or Line[i] == 'A' or Line[i] == 'y':
+            sum += 24
+        elif Line[i] == 'b' or Line[i] == 'd' or Line[i] == 'p' or Line[i] == 'G' or Line[i] == 'S' or Line[i] == 'q' or Line[i] == 'H' or Line[i] == 'N':
+            sum += 25
+        elif Line[i] == 'D' or Line[i] == '9' or Line[i] == 'E' or Line[i] == 'W' or Line[i] == '6' or Line[i] == 'O':
+            sum += 26
+        elif Line[i] == '5':
+            sum += 27
+        elif Line[i] == 'R' or Line[i] == 'M':
+            sum += 28
+        elif Line[i] == '$' or Line[i] == 'B':
+            sum += 29
+        elif Line[i] == 'g':
+            sum += 30
+        elif Line[i] == 'Q':
+            sum += 31
+        elif Line[i] == '@':
+            sum += 32
         else:
-            summ += 23
-    return summ
+            sum += 23
+    return sum
 
 
-# Line = input()
-# print(PrintingCosts(Line))
